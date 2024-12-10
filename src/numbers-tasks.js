@@ -87,9 +87,13 @@ getDistanceBetweenPoints();
  *   x + 8 = 0       => -8
  *   5*x = 0         => 0
  */
-function getLinearEquationRoot(/* a, b */) {
-  throw new Error('Not implemented');
+function getLinearEquationRoot(a, b) {
+  if (a === 0) {
+    return null;
+  }
+  return -b / a;
 }
+getLinearEquationRoot();
 
 /**
  * Returns an angle (in radians) between two vectors given by xi and yi,
@@ -125,10 +129,10 @@ function getAngleBetweenVectors(/* x1, y1, x2, y2 */) {
  *     5     => 5
  *     0     => 0
  */
-function getLastDigit(/* value */) {
-  throw new Error('Not implemented');
+function getLastDigit(value) {
+  return value % 10;
 }
-
+getLastDigit();
 /**
  * Returns a number by given string representation.
  *
