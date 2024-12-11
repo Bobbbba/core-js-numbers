@@ -112,9 +112,13 @@ getLinearEquationRoot();
  *   (0,-1) (1,0)    => π/2
  *   (0,1) (0,1)     => 0
  */
-function getAngleBetweenVectors(/* x1, y1, x2, y2 */) {
-  throw new Error('Not implemented');
+function getAngleBetweenVectors(x1, y1, x2, y2) {
+  const vectors = x1 * x2 + y1 * y2;
+  const moduls1 = Math.sqrt(x1 ** 2 + y1 ** 2);
+  const moduls2 = Math.sqrt(x2 ** 2 + y2 ** 2);
+  return Math.acos(vectors / (moduls1 * moduls2));
 }
+getAngleBetweenVectors();
 
 /**
  * Returns a last digit of a integer number.
@@ -144,10 +148,10 @@ getLastDigit();
  *     '37'     => 37
  * '-525.5'     => -525.5
  */
-function parseNumberFromString(/* value */) {
-  throw new Error('Not implemented');
+function parseNumberFromString(value) {
+  return Number(value);
 }
-
+parseNumberFromString();
 /**
  * Returns a diagonal length of the rectangular parallelepiped given by its sides a,b,c.
  *
@@ -161,10 +165,10 @@ function parseNumberFromString(/* value */) {
  *   3,3,3   => 5.196152422706632
  *   1,2,3   => 3.741657386773941
  */
-function getParallelepipedDiagonal(/* a, b, c */) {
-  throw new Error('Not implemented');
+function getParallelepipedDiagonal(a, b, c) {
+  return Math.sqrt(a ** 2 + b ** 2 + c ** 2);
 }
-
+getParallelepipedDiagonal();
 /**
  * Returns the number rounded to specified power of 10.
  *
@@ -182,10 +186,10 @@ function getParallelepipedDiagonal(/* a, b, c */) {
  *   1678, 2  => 1700
  *   1678, 3  => 2000
  */
-function roundToPowerOfTen(/* num, pow */) {
-  throw new Error('Not implemented');
+function roundToPowerOfTen(num, pow) {
+  return Math.round(Math.floor(num) / 10 ** pow) * 10 ** pow;
 }
-
+roundToPowerOfTen();
 /**
  * Returns true is the number is prime; otherwise false.
  * See: https://en.wikipedia.org/wiki/Primality_test
@@ -203,9 +207,13 @@ function roundToPowerOfTen(/* num, pow */) {
  *   16 => false
  *   17 => true
  */
-function isPrime(/* n */) {
-  throw new Error('Not implemented');
+function isPrime(n) {
+  for (let i = 2; i < n; i += 1) {
+    if (n % i === 0) return false;
+  }
+  return n > 1;
 }
+isPrime();
 
 /**
  * Tries to convert value to number and returns it if conversion was successful;
