@@ -399,11 +399,9 @@ function toPrecision(/* number, precision */) {
  * new Number(5) => 5
  * Number(-5)    => -5
  */
-function getNumberValue(number) {
-  const num = Number.valueOf(number);
-  return typeof num;
+function getNumberValue(/* number */) {
+  throw new Error('Not implemented');
 }
-getNumberValue(number)
 
 /**
  * Returns a boolean value indicating whether the parameter is a number or not.
