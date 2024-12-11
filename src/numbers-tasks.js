@@ -230,10 +230,14 @@ isPrime();
  *   toNumber(42, 0) => 42
  *   toNumber(new Number(42), 0) => 42
  */
-function toNumber(/* value, def */) {
-  throw new Error('Not implemented');
+function toNumber(value, def = 0) {
+  const values = Number(value);
+  if (Number.isInteger(values)) {
+    return values;
+  }
+  return def;
 }
-
+toNumber();
 /**
  * Returns the cube of the given number.
  *
@@ -245,10 +249,10 @@ function toNumber(/* value, def */) {
  *   -2 => -8
  *   0  => 0
  */
-function getCube(/* num */) {
-  throw new Error('Not implemented');
+function getCube(num) {
+  return num ** 3;
 }
-
+getCube();
 /**
  * Returns the Fibonacci number located at the index position.
  *
@@ -321,8 +325,8 @@ function isPowerOfTwo(/* num */) {
  *   0 => 0
  *   Math.PI / 2 => 1
  */
-function getSine(/* num */) {
-  throw new Error('Not implemented');
+function getSine(num) {
+  return Math.sin(num);
 }
 
 /**
@@ -395,9 +399,11 @@ function toPrecision(/* number, precision */) {
  * new Number(5) => 5
  * Number(-5)    => -5
  */
-function getNumberValue(/* number */) {
-  throw new Error('Not implemented');
+function getNumberValue(number) {
+  const num = Number.valueOf(number);
+  return typeof num;
 }
+getNumberValue(number)
 
 /**
  * Returns a boolean value indicating whether the parameter is a number or not.
