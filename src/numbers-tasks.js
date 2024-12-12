@@ -491,8 +491,11 @@ function getIntegerOnString(/* str, base */) {
  * 3.5      => false
  * 2 ** 53  => false
  */
-function isSafeInteger(/* number */) {
-  throw new Error('Not implemented');
+function isSafeInteger(number) {
+  if (Number.isSafeInteger(number)) {
+    return true;
+  }
+  return false;
 }
 
 /**
@@ -505,8 +508,8 @@ function isSafeInteger(/* number */) {
  * 5.9  => 5
  * -5.1 => -6
  */
-function roundToSmallestInteger(/* number */) {
-  throw new Error('Not implemented');
+function roundToSmallestInteger(number) {
+  return Math.floor(number);
 }
 
 /**
@@ -515,7 +518,7 @@ function roundToSmallestInteger(/* number */) {
  * @param {number} number
  * @return {number}
  *
- * @example:
+ * @example:pmpm
  * 5.1  => 6
  * -5.9 => -5
  */
